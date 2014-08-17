@@ -1,6 +1,6 @@
 //
 //  EndScene.h
-//  BreakingBricks
+//  AmazingBlock
 //
 //  Created by Hicham Chourak on 08/07/14.
 //  Copyright (c) 2014 Hicham Chourak. All rights reserved.
@@ -11,3 +11,4 @@
 @interface EndScene : SKScene
 
 @end
+

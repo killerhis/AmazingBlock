@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4502E22E19A0DFC100A6FE83 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4502E22D19A0DFC100A6FE83 /* AVFoundation.framework */; };
+		4502E23019A0DFEC00A6FE83 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4502E22F19A0DFEC00A6FE83 /* AudioToolbox.framework */; };
+		4502E23419A0E24500A6FE83 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23319A0E24500A6FE83 /* backgroundMusic.mp3 */; };
+		4502E23819A0E2CB00A6FE83 /* amazingblock_splashscreen_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23619A0E2CB00A6FE83 /* amazingblock_splashscreen_@2x.png */; };
+		4502E23919A0E2CB00A6FE83 /* amazingblock_splashscreen_r4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23719A0E2CB00A6FE83 /* amazingblock_splashscreen_r4@2x.png */; };
+		4502E24019A0EF6500A6FE83 /* amzingblock_logo_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23B19A0EF6500A6FE83 /* amzingblock_logo_1024.png */; };
+		4502E24119A0EF6500A6FE83 /* amzingblock_logo_29pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23C19A0EF6500A6FE83 /* amzingblock_logo_29pt.png */; };
+		4502E24219A0EF6500A6FE83 /* amzingblock_logo_40pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23D19A0EF6500A6FE83 /* amzingblock_logo_40pt.png */; };
+		4502E24319A0EF6500A6FE83 /* amzingblock_logo_60pt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23E19A0EF6500A6FE83 /* amzingblock_logo_60pt.png */; };
+		4502E24419A0EF6500A6FE83 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 4502E23F19A0EF6500A6FE83 /* Thumbs.db */; };
+		4502E24719A0F20F00A6FE83 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E24519A0F20F00A6FE83 /* arrow.png */; };
+		4502E24819A0F20F00A6FE83 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E24619A0F20F00A6FE83 /* arrow@2x.png */; };
+		4502E24B19A0F62B00A6FE83 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E24919A0F62B00A6FE83 /* arrow-left.png */; };
+		4502E24C19A0F62B00A6FE83 /* arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E24A19A0F62B00A6FE83 /* arrow-left@2x.png */; };
+		4502E24F19A101F300A6FE83 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4502E24E19A101F300A6FE83 /* StartScene.m */; };
+		4502E25119A1046B00A6FE83 /* start_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E25019A1046B00A6FE83 /* start_background@2x.png */; };
+		4502E25419A1065800A6FE83 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E25219A1065800A6FE83 /* button.png */; };
+		4502E25519A1065800A6FE83 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4502E25319A1065800A6FE83 /* button@2x.png */; };
 		456BB786196B21D100F2A75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456BB785196B21D100F2A75C /* Foundation.framework */; };
 		456BB788196B21D100F2A75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456BB787196B21D100F2A75C /* CoreGraphics.framework */; };
 		456BB78A196B21D100F2A75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456BB789196B21D100F2A75C /* UIKit.framework */; };
@@ -17,13 +35,17 @@
 		456BB79B196B21D100F2A75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456BB799196B21D100F2A75C /* Main.storyboard */; };
 		456BB79E196B21D100F2A75C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BB79D196B21D100F2A75C /* ViewController.m */; };
 		456BB7A1196B21D100F2A75C /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BB7A0196B21D100F2A75C /* MyScene.m */; };
-		456BB7A3196B21D100F2A75C /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 456BB7A2196B21D100F2A75C /* Spaceship.png */; };
 		456BB7A5196B21D100F2A75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456BB7A4196B21D100F2A75C /* Images.xcassets */; };
 		456BB7AC196B21D100F2A75C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456BB7AB196B21D100F2A75C /* XCTest.framework */; };
 		456BB7AD196B21D100F2A75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456BB785196B21D100F2A75C /* Foundation.framework */; };
 		456BB7AE196B21D100F2A75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456BB789196B21D100F2A75C /* UIKit.framework */; };
 		456BB7B6196B21D100F2A75C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 456BB7B4196B21D100F2A75C /* InfoPlist.strings */; };
 		456BB7B8196B21D100F2A75C /* BreakingBricksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 456BB7B7196B21D100F2A75C /* BreakingBricksTests.m */; };
+		45750D5F196C528B00280DEA /* blip.caf in Resources */ = {isa = PBXBuildFile; fileRef = 45750D5C196C528B00280DEA /* blip.caf */; };
+		45750D60196C528B00280DEA /* brickhit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 45750D5D196C528B00280DEA /* brickhit.caf */; };
+		45750D61196C528B00280DEA /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = 45750D5E196C528B00280DEA /* gameover.caf */; };
+		45750D64196C65DB00280DEA /* EndScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 45750D63196C65DB00280DEA /* EndScene.m */; };
+		45FB42E319A10CF20010C4B0 /* restart-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45FB42E219A10CF20010C4B0 /* restart-background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,15 +59,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		456BB782196B21D100F2A75C /* BreakingBricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4502E22D19A0DFC100A6FE83 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4502E22F19A0DFEC00A6FE83 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4502E23319A0E24500A6FE83 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		4502E23619A0E2CB00A6FE83 /* amazingblock_splashscreen_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazingblock_splashscreen_@2x.png"; sourceTree = "<group>"; };
+		4502E23719A0E2CB00A6FE83 /* amazingblock_splashscreen_r4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amazingblock_splashscreen_r4@2x.png"; sourceTree = "<group>"; };
+		4502E23B19A0EF6500A6FE83 /* amzingblock_logo_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amzingblock_logo_1024.png; sourceTree = "<group>"; };
+		4502E23C19A0EF6500A6FE83 /* amzingblock_logo_29pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amzingblock_logo_29pt.png; sourceTree = "<group>"; };
+		4502E23D19A0EF6500A6FE83 /* amzingblock_logo_40pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amzingblock_logo_40pt.png; sourceTree = "<group>"; };
+		4502E23E19A0EF6500A6FE83 /* amzingblock_logo_60pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amzingblock_logo_60pt.png; sourceTree = "<group>"; };
+		4502E23F19A0EF6500A6FE83 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
+		4502E24519A0F20F00A6FE83 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4502E24619A0F20F00A6FE83 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		4502E24919A0F62B00A6FE83 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left.png"; sourceTree = "<group>"; };
+		4502E24A19A0F62B00A6FE83 /* arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left@2x.png"; sourceTree = "<group>"; };
+		4502E24D19A101F300A6FE83 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		4502E24E19A101F300A6FE83 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
+		4502E25019A1046B00A6FE83 /* start_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_background@2x.png"; sourceTree = "<group>"; };
+		4502E25219A1065800A6FE83 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		4502E25319A1065800A6FE83 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		456BB782196B21D100F2A75C /* Amazing Block.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amazing Block.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		456BB785196B21D100F2A75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		456BB787196B21D100F2A75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		456BB789196B21D100F2A75C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		456BB78B196B21D100F2A75C /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		456BB78F196B21D100F2A75C /* BreakingBricks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreakingBricks-Info.plist"; sourceTree = "<group>"; };
+		456BB78F196B21D100F2A75C /* Amazing Block-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Amazing Block-Info.plist"; sourceTree = "<group>"; };
 		456BB791196B21D100F2A75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		456BB793196B21D100F2A75C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		456BB795196B21D100F2A75C /* BreakingBricks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BreakingBricks-Prefix.pch"; sourceTree = "<group>"; };
+		456BB795196B21D100F2A75C /* Amazing Block-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amazing Block-Prefix.pch"; sourceTree = "<group>"; };
 		456BB796196B21D100F2A75C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		456BB797196B21D100F2A75C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		456BB79A196B21D100F2A75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,13 +94,18 @@
 		456BB79D196B21D100F2A75C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		456BB79F196B21D100F2A75C /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		456BB7A0196B21D100F2A75C /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		456BB7A2196B21D100F2A75C /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		456BB7A4196B21D100F2A75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		456BB7AA196B21D100F2A75C /* BreakingBricksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBricksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		456BB7AA196B21D100F2A75C /* Amazing BlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Amazing BlockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		456BB7AB196B21D100F2A75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		456BB7B3196B21D100F2A75C /* BreakingBricksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BreakingBricksTests-Info.plist"; sourceTree = "<group>"; };
+		456BB7B3196B21D100F2A75C /* Amazing BlockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Amazing BlockTests-Info.plist"; sourceTree = "<group>"; };
 		456BB7B5196B21D100F2A75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		456BB7B7196B21D100F2A75C /* BreakingBricksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BreakingBricksTests.m; sourceTree = "<group>"; };
+		45750D5C196C528B00280DEA /* blip.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blip.caf; sourceTree = "<group>"; };
+		45750D5D196C528B00280DEA /* brickhit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = brickhit.caf; sourceTree = "<group>"; };
+		45750D5E196C528B00280DEA /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
+		45750D62196C65DB00280DEA /* EndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndScene.h; path = ../EndScene.h; sourceTree = "<group>"; };
+		45750D63196C65DB00280DEA /* EndScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndScene.m; path = ../EndScene.m; sourceTree = "<group>"; };
+		45FB42E219A10CF20010C4B0 /* restart-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart-background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4502E23019A0DFEC00A6FE83 /* AudioToolbox.framework in Frameworks */,
+				4502E22E19A0DFC100A6FE83 /* AVFoundation.framework in Frameworks */,
 				456BB788196B21D100F2A75C /* CoreGraphics.framework in Frameworks */,
 				456BB78A196B21D100F2A75C /* UIKit.framework in Frameworks */,
 				456BB78C196B21D100F2A75C /* SpriteKit.framework in Frameworks */,
@@ -87,10 +135,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4502E23519A0E2BF00A6FE83 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4502E23A19A0EF6500A6FE83 /* icons */,
+				4502E23619A0E2CB00A6FE83 /* amazingblock_splashscreen_@2x.png */,
+				4502E23719A0E2CB00A6FE83 /* amazingblock_splashscreen_r4@2x.png */,
+				4502E24919A0F62B00A6FE83 /* arrow-left.png */,
+				4502E24A19A0F62B00A6FE83 /* arrow-left@2x.png */,
+				4502E24519A0F20F00A6FE83 /* arrow.png */,
+				4502E24619A0F20F00A6FE83 /* arrow@2x.png */,
+				4502E25019A1046B00A6FE83 /* start_background@2x.png */,
+				4502E25219A1065800A6FE83 /* button.png */,
+				4502E25319A1065800A6FE83 /* button@2x.png */,
+				45FB42E219A10CF20010C4B0 /* restart-background@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		4502E23A19A0EF6500A6FE83 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				4502E23B19A0EF6500A6FE83 /* amzingblock_logo_1024.png */,
+				4502E23C19A0EF6500A6FE83 /* amzingblock_logo_29pt.png */,
+				4502E23D19A0EF6500A6FE83 /* amzingblock_logo_40pt.png */,
+				4502E23E19A0EF6500A6FE83 /* amzingblock_logo_60pt.png */,
+				4502E23F19A0EF6500A6FE83 /* Thumbs.db */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		456BB779196B21D000F2A75C = {
 			isa = PBXGroup;
 			children = (
-				456BB78D196B21D100F2A75C /* BreakingBricks */,
+				456BB78D196B21D100F2A75C /* AmazingBlock */,
 				456BB7B1196B21D100F2A75C /* BreakingBricksTests */,
 				456BB784196B21D100F2A75C /* Frameworks */,
 				456BB783196B21D100F2A75C /* Products */,
@@ -100,8 +178,8 @@
 		456BB783196B21D100F2A75C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				456BB782196B21D100F2A75C /* BreakingBricks.app */,
-				456BB7AA196B21D100F2A75C /* BreakingBricksTests.xctest */,
+				456BB782196B21D100F2A75C /* Amazing Block.app */,
+				456BB7AA196B21D100F2A75C /* Amazing BlockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +187,8 @@
 		456BB784196B21D100F2A75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4502E22F19A0DFEC00A6FE83 /* AudioToolbox.framework */,
+				4502E22D19A0DFC100A6FE83 /* AVFoundation.framework */,
 				456BB785196B21D100F2A75C /* Foundation.framework */,
 				456BB787196B21D100F2A75C /* CoreGraphics.framework */,
 				456BB789196B21D100F2A75C /* UIKit.framework */,
@@ -118,30 +198,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		456BB78D196B21D100F2A75C /* BreakingBricks */ = {
+		456BB78D196B21D100F2A75C /* AmazingBlock */ = {
 			isa = PBXGroup;
 			children = (
+				4502E23519A0E2BF00A6FE83 /* images */,
+				45750D5B196C528B00280DEA /* gamesounds */,
 				456BB796196B21D100F2A75C /* AppDelegate.h */,
 				456BB797196B21D100F2A75C /* AppDelegate.m */,
+				45750D62196C65DB00280DEA /* EndScene.h */,
+				45750D63196C65DB00280DEA /* EndScene.m */,
+				4502E24D19A101F300A6FE83 /* StartScene.h */,
+				4502E24E19A101F300A6FE83 /* StartScene.m */,
 				456BB799196B21D100F2A75C /* Main.storyboard */,
 				456BB79C196B21D100F2A75C /* ViewController.h */,
 				456BB79D196B21D100F2A75C /* ViewController.m */,
 				456BB79F196B21D100F2A75C /* MyScene.h */,
 				456BB7A0196B21D100F2A75C /* MyScene.m */,
-				456BB7A2196B21D100F2A75C /* Spaceship.png */,
 				456BB7A4196B21D100F2A75C /* Images.xcassets */,
 				456BB78E196B21D100F2A75C /* Supporting Files */,
 			);
+			name = AmazingBlock;
 			path = BreakingBricks;
 			sourceTree = "<group>";
 		};
 		456BB78E196B21D100F2A75C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				456BB78F196B21D100F2A75C /* BreakingBricks-Info.plist */,
+				456BB78F196B21D100F2A75C /* Amazing Block-Info.plist */,
 				456BB790196B21D100F2A75C /* InfoPlist.strings */,
 				456BB793196B21D100F2A75C /* main.m */,
-				456BB795196B21D100F2A75C /* BreakingBricks-Prefix.pch */,
+				456BB795196B21D100F2A75C /* Amazing Block-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,18 +244,29 @@
 		456BB7B2196B21D100F2A75C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				456BB7B3196B21D100F2A75C /* BreakingBricksTests-Info.plist */,
+				456BB7B3196B21D100F2A75C /* Amazing BlockTests-Info.plist */,
 				456BB7B4196B21D100F2A75C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		45750D5B196C528B00280DEA /* gamesounds */ = {
+			isa = PBXGroup;
+			children = (
+				4502E23319A0E24500A6FE83 /* backgroundMusic.mp3 */,
+				45750D5C196C528B00280DEA /* blip.caf */,
+				45750D5D196C528B00280DEA /* brickhit.caf */,
+				45750D5E196C528B00280DEA /* gameover.caf */,
+			);
+			path = gamesounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		456BB781196B21D100F2A75C /* BreakingBricks */ = {
+		456BB781196B21D100F2A75C /* Amazing Block */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 456BB7BB196B21D100F2A75C /* Build configuration list for PBXNativeTarget "BreakingBricks" */;
+			buildConfigurationList = 456BB7BB196B21D100F2A75C /* Build configuration list for PBXNativeTarget "Amazing Block" */;
 			buildPhases = (
 				456BB77E196B21D100F2A75C /* Sources */,
 				456BB77F196B21D100F2A75C /* Frameworks */,
@@ -179,14 +276,14 @@
 			);
 			dependencies = (
 			);
-			name = BreakingBricks;
+			name = "Amazing Block";
 			productName = BreakingBricks;
-			productReference = 456BB782196B21D100F2A75C /* BreakingBricks.app */;
+			productReference = 456BB782196B21D100F2A75C /* Amazing Block.app */;
 			productType = "com.apple.product-type.application";
 		};
-		456BB7A9196B21D100F2A75C /* BreakingBricksTests */ = {
+		456BB7A9196B21D100F2A75C /* Amazing BlockTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 456BB7BE196B21D100F2A75C /* Build configuration list for PBXNativeTarget "BreakingBricksTests" */;
+			buildConfigurationList = 456BB7BE196B21D100F2A75C /* Build configuration list for PBXNativeTarget "Amazing BlockTests" */;
 			buildPhases = (
 				456BB7A6196B21D100F2A75C /* Sources */,
 				456BB7A7196B21D100F2A75C /* Frameworks */,
@@ -197,9 +294,9 @@
 			dependencies = (
 				456BB7B0196B21D100F2A75C /* PBXTargetDependency */,
 			);
-			name = BreakingBricksTests;
+			name = "Amazing BlockTests";
 			productName = BreakingBricksTests;
-			productReference = 456BB7AA196B21D100F2A75C /* BreakingBricksTests.xctest */;
+			productReference = 456BB7AA196B21D100F2A75C /* Amazing BlockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +313,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 456BB77D196B21D000F2A75C /* Build configuration list for PBXProject "BreakingBricks" */;
+			buildConfigurationList = 456BB77D196B21D000F2A75C /* Build configuration list for PBXProject "Amazing Block" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -229,8 +326,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				456BB781196B21D100F2A75C /* BreakingBricks */,
-				456BB7A9196B21D100F2A75C /* BreakingBricksTests */,
+				456BB781196B21D100F2A75C /* Amazing Block */,
+				456BB7A9196B21D100F2A75C /* Amazing BlockTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,9 +338,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				456BB792196B21D100F2A75C /* InfoPlist.strings in Resources */,
+				4502E25419A1065800A6FE83 /* button.png in Resources */,
+				45750D5F196C528B00280DEA /* blip.caf in Resources */,
+				4502E23419A0E24500A6FE83 /* backgroundMusic.mp3 in Resources */,
+				4502E23819A0E2CB00A6FE83 /* amazingblock_splashscreen_@2x.png in Resources */,
+				4502E24819A0F20F00A6FE83 /* arrow@2x.png in Resources */,
+				4502E24B19A0F62B00A6FE83 /* arrow-left.png in Resources */,
+				45750D61196C528B00280DEA /* gameover.caf in Resources */,
+				45FB42E319A10CF20010C4B0 /* restart-background@2x.png in Resources */,
+				4502E25119A1046B00A6FE83 /* start_background@2x.png in Resources */,
+				45750D60196C528B00280DEA /* brickhit.caf in Resources */,
+				4502E23919A0E2CB00A6FE83 /* amazingblock_splashscreen_r4@2x.png in Resources */,
+				4502E24319A0EF6500A6FE83 /* amzingblock_logo_60pt.png in Resources */,
 				456BB7A5196B21D100F2A75C /* Images.xcassets in Resources */,
-				456BB7A3196B21D100F2A75C /* Spaceship.png in Resources */,
+				4502E24219A0EF6500A6FE83 /* amzingblock_logo_40pt.png in Resources */,
+				4502E24419A0EF6500A6FE83 /* Thumbs.db in Resources */,
+				4502E24C19A0F62B00A6FE83 /* arrow-left@2x.png in Resources */,
 				456BB79B196B21D100F2A75C /* Main.storyboard in Resources */,
+				4502E24019A0EF6500A6FE83 /* amzingblock_logo_1024.png in Resources */,
+				4502E24719A0F20F00A6FE83 /* arrow.png in Resources */,
+				4502E25519A1065800A6FE83 /* button@2x.png in Resources */,
+				4502E24119A0EF6500A6FE83 /* amzingblock_logo_29pt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,9 +378,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				456BB7A1196B21D100F2A75C /* MyScene.m in Sources */,
+				4502E24F19A101F300A6FE83 /* StartScene.m in Sources */,
 				456BB79E196B21D100F2A75C /* ViewController.m in Sources */,
 				456BB798196B21D100F2A75C /* AppDelegate.m in Sources */,
 				456BB794196B21D100F2A75C /* main.m in Sources */,
+				45750D64196C65DB00280DEA /* EndScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +399,7 @@
 /* Begin PBXTargetDependency section */
 		456BB7B0196B21D100F2A75C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 456BB781196B21D100F2A75C /* BreakingBricks */;
+			target = 456BB781196B21D100F2A75C /* Amazing Block */;
 			targetProxy = 456BB7AF196B21D100F2A75C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -347,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -379,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -391,9 +508,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BreakingBricks/BreakingBricks-Prefix.pch";
-				INFOPLIST_FILE = "BreakingBricks/BreakingBricks-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "BreakingBricks/Amazing Block-Prefix.pch";
+				INFOPLIST_FILE = "BreakingBricks/Amazing Block-Info.plist";
+				PRODUCT_NAME = "Amazing Block";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,9 +522,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BreakingBricks/BreakingBricks-Prefix.pch";
-				INFOPLIST_FILE = "BreakingBricks/BreakingBricks-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "BreakingBricks/Amazing Block-Prefix.pch";
+				INFOPLIST_FILE = "BreakingBricks/Amazing Block-Info.plist";
+				PRODUCT_NAME = "Amazing Block";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,8 +545,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "BreakingBricksTests/BreakingBricksTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BreakingBricksTests/Amazing BlockTests-Info.plist";
+				PRODUCT_NAME = "Amazing BlockTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -446,8 +563,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BreakingBricks/BreakingBricks-Prefix.pch";
-				INFOPLIST_FILE = "BreakingBricksTests/BreakingBricksTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BreakingBricksTests/Amazing BlockTests-Info.plist";
+				PRODUCT_NAME = "Amazing BlockTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -456,7 +573,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		456BB77D196B21D000F2A75C /* Build configuration list for PBXProject "BreakingBricks" */ = {
+		456BB77D196B21D000F2A75C /* Build configuration list for PBXProject "Amazing Block" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				456BB7B9196B21D100F2A75C /* Debug */,
@@ -465,21 +582,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		456BB7BB196B21D100F2A75C /* Build configuration list for PBXNativeTarget "BreakingBricks" */ = {
+		456BB7BB196B21D100F2A75C /* Build configuration list for PBXNativeTarget "Amazing Block" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				456BB7BC196B21D100F2A75C /* Debug */,
 				456BB7BD196B21D100F2A75C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		456BB7BE196B21D100F2A75C /* Build configuration list for PBXNativeTarget "BreakingBricksTests" */ = {
+		456BB7BE196B21D100F2A75C /* Build configuration list for PBXNativeTarget "Amazing BlockTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				456BB7BF196B21D100F2A75C /* Debug */,
 				456BB7C0196B21D100F2A75C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

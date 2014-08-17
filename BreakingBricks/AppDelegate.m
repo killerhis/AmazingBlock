@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  BreakingBricks
+//  AmazingBlock
 //
 //  Created by Hicham Chourak on 07/07/14.
 //  Copyright (c) 2014 Hicham Chourak. All rights reserved.
@@ -13,6 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
     return YES;
 }
 							
