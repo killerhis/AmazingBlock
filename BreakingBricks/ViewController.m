@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "MyScene.h"
-#import "EndScene.h"
 #import "StartScene.h"
 
 @implementation ViewController
@@ -24,15 +23,11 @@
     self.player.volume = 0.2;
     [self.player play];
     
-    //__weak MyScene *weakself = self;
     __weak SKView * skView = (SKView *)self.view;
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            // Configure the view.
-            //skView.showsFPS = YES;
-            //skView.showsNodeCount = YES;
-            
+
             // Create and configure the scene.
             SKScene * scene = [StartScene sceneWithSize:skView.bounds.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
@@ -66,7 +61,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 @end

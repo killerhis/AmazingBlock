@@ -9,7 +9,7 @@
 #import "MyScene.h"
 #import "EndScene.h"
 
-#define ARC4RANDOM_MAX      0x100000000
+#define ARC4RANDOM_MAX 0x100000000
 
 @interface MyScene ()
 
@@ -23,6 +23,7 @@
 
 @property (nonatomic) int score;
 @property (nonatomic) int firstTouch;
+
 @end
 
 static const uint32_t ballCategory = 0x1;
@@ -32,12 +33,10 @@ static const uint32_t edgeCategory = 0x1 << 3;
 static const uint32_t bottemEdgeCategory = 0x1 << 4;
 
 static NSString *brickName = @"brick";
-static NSString *brickNodeName = @"brickNode";
 static NSString *scoreLabelName = @"scoreLabelName";
 
 @implementation MyScene {
-    CGSize globalSize;
-    NSDate *currentTime;
+
     int lineLevel;
     
     SKSpriteNode *ball;
@@ -57,16 +56,11 @@ static NSString *scoreLabelName = @"scoreLabelName";
         self.gameEnding = NO;
         self.score = 0;
         self.firstTouch = 0;
+        lineLevel = 0;
         
         //init soundeffects
         self.playBrickSFX = [SKAction playSoundFileNamed:@"blip.caf" waitForCompletion:NO];
         self.playSFX = [SKAction playSoundFileNamed:@"brickhit.caf" waitForCompletion:NO];
-        
-        //self.brickNode = [[SKNode alloc] init];
-        //self.brickNode.name = brickNodeName;
-        
-        //currentTime = [NSDate date];
-        lineLevel = 0;
         
         // add physics body to scene
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
@@ -98,7 +92,6 @@ static NSString *scoreLabelName = @"scoreLabelName";
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    
     if ([self isGameOver]) {
         [self endGame];
     }
@@ -184,8 +177,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
         if (brickCount == 8)
         {
             brickCount = 0;
-            [ball.physicsBody applyImpulse:CGVectorMake(ball.physicsBody.velocity.dx*0.0001, ball.physicsBody.velocity.dy*0.0001)];
-            
+            [ball.physicsBody applyImpulse:CGVectorMake(ball.physicsBody.velocity.dx*0.0005, ball.physicsBody.velocity.dy*0.0005)];
 
             [self addBrickLine:self.size];
             
@@ -236,6 +228,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
 
 #pragma mark - game elements
 
+
 - (void) addBricks:(CGSize)size
 {
     
@@ -258,8 +251,6 @@ static NSString *scoreLabelName = @"scoreLabelName";
             brick.physicsBody.friction = 0.0;
             brick.physicsBody.linearDamping = 0.0;
             
-            //[self addChild:brick];
-            //[self.brickNode addChild:brick];
             [self addChild:brick];
         }
     }
@@ -286,8 +277,6 @@ static NSString *scoreLabelName = @"scoreLabelName";
             brick.physicsBody.dynamic = NO;
             brick.physicsBody.categoryBitMask = brickCategory;
             
-            //[self addChild:brick];
-            //[self.brickNode addChild:brick];
             [self addChild:brick];
         }
     }
@@ -299,16 +288,11 @@ static NSString *scoreLabelName = @"scoreLabelName";
     // create paddle sprite
     self.paddle = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:148/255.0 green:203/255.0 blue:101/255.0 alpha:1.0] size:CGSizeMake(80, 20)];
     
-    //scale
-    //[self.paddle setScale:4];
-    
-    //Position
     self.paddle.position = CGPointMake(size.width/2, size.height/10);
     
-    // Add physics body
     self.paddle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.paddle.frame.size];
-    
-    // Make static
+    self.paddle.physicsBody.restitution = 0.1f;
+    self.paddle.physicsBody.friction = 0.4f;
     self.paddle.physicsBody.dynamic = NO;
     self.paddle.physicsBody.categoryBitMask = paddleCategory;
     
@@ -331,6 +315,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
     ball.physicsBody.friction = 0;
     ball.physicsBody.linearDamping = 0;
     ball.physicsBody.restitution = 1;
+    ball.physicsBody.allowsRotation = NO;
     ball.physicsBody.categoryBitMask = ballCategory;
     ball.physicsBody.contactTestBitMask = brickCategory | paddleCategory | bottemEdgeCategory;
     
@@ -373,12 +358,10 @@ static NSString *scoreLabelName = @"scoreLabelName";
     }];
 
     return bricksTooLow;
-    //return YES;
 }
 
 - (void)endGame
 {
-    NSLog(@"endgame");
     if (!self.gameEnding) {
         self.gameEnding = YES;
         ball.paused = YES;
@@ -391,7 +374,6 @@ static NSString *scoreLabelName = @"scoreLabelName";
         [defaults setInteger:self.score forKey:@"Score"];
         NSInteger bestScore = [defaults integerForKey:@"bestScore"];
         
-        NSLog(@"Score: %i", self.score);
         if (self.score > bestScore) {
             
             [defaults setInteger:self.score forKey:@"bestScore"];
@@ -401,7 +383,6 @@ static NSString *scoreLabelName = @"scoreLabelName";
         EndScene *end = [EndScene sceneWithSize:self.size];
         [self.view presentScene:end transition:[SKTransition doorsCloseHorizontalWithDuration:0.5]];
     }
-    
 }
 
 
