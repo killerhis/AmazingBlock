@@ -116,7 +116,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
 
 - (void)adjustScoreBy:(NSUInteger)points
 {
-    self.score += points;
+    self.score += (int)points;
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:scoreLabelName];
     scoreLabel.text = [NSString stringWithFormat:@"%i", self.score];
 }

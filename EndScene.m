@@ -38,7 +38,7 @@
     
         bestScoreLabel.fontSize = 25;
         bestScoreLabel.fontColor = [SKColor colorWithRed:17/255.0 green:17/255.0 blue:17/255.0 alpha:1.0f];
-        bestScoreLabel.text = [NSString stringWithFormat:@"%i", bestScore];
+        bestScoreLabel.text = [NSString stringWithFormat:@"%i", (int)bestScore];
         
         bestScoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 - bestScoreLabel.frame.size.height - 5);
         
@@ -48,7 +48,7 @@
         
         scoreLabel.fontSize = 25;
         scoreLabel.fontColor = [SKColor colorWithRed:17/255.0 green:17/255.0 blue:17/255.0 alpha:1.0f];
-        scoreLabel.text = [NSString stringWithFormat:@"%i", score];
+        scoreLabel.text = [NSString stringWithFormat:@"%i", (int)score];
         
         scoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 + scoreLabel.frame.size.height + 4);
         
