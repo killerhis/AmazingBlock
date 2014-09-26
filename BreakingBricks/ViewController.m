@@ -16,6 +16,10 @@
 {
     [super viewDidLoad];
     
+    // Load notification for background states
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
     //play background music
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"backgroundMusic" ofType:@"mp3"]];
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
@@ -62,5 +66,14 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+-(void) appWillResignActive:(NSNotification*)note{
+    [self.player pause];
+}
+
+-(void) appWillEnterForeground:(NSNotification*)note{
+    [self.player play];
+}
+
 
 @end

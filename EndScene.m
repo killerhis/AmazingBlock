@@ -17,6 +17,23 @@
         
         self.backgroundColor = [SKColor whiteColor];
         
+        // GA
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIScreenName value:@"GameOverMenu"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        tracker.allowIDFACollection = NO;
+        
+        
+        
+        float scale;
+        
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        {
+            scale = 2.0f; /* Device is iPad */
+        } else {
+            scale = 1.0f;
+        }
+        
         SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"restart-background"];
         backgroundNode.position = CGPointMake(size.width/2, size.height/2);
         
@@ -36,21 +53,21 @@
         
         SKLabelNode *bestScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Light"];
     
-        bestScoreLabel.fontSize = 25;
+        bestScoreLabel.fontSize = 25*scale;
         bestScoreLabel.fontColor = [SKColor colorWithRed:17/255.0 green:17/255.0 blue:17/255.0 alpha:1.0f];
         bestScoreLabel.text = [NSString stringWithFormat:@"%i", (int)bestScore];
         
-        bestScoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 - bestScoreLabel.frame.size.height - 5);
+        bestScoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 - bestScoreLabel.frame.size.height - 5*scale);
         
         [self addChild:bestScoreLabel];
         
         SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Light"];
         
-        scoreLabel.fontSize = 25;
+        scoreLabel.fontSize = 25*scale;
         scoreLabel.fontColor = [SKColor colorWithRed:17/255.0 green:17/255.0 blue:17/255.0 alpha:1.0f];
         scoreLabel.text = [NSString stringWithFormat:@"%i", (int)score];
         
-        scoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 + scoreLabel.frame.size.height + 4);
+        scoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 + scoreLabel.frame.size.height + 4*scale);
         
         [self addChild:scoreLabel];
     }
@@ -69,6 +86,17 @@
         [self.view presentScene:firstScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
     }
 }
+
+- (float)setDeviceScale
+{
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        return 2.0f; /* Device is iPad */
+    } else {
+        return 1.0f;
+    }
+}
+
 
 
 @end

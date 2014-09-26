@@ -43,6 +43,8 @@ static NSString *scoreLabelName = @"scoreLabelName";
     SKSpriteNode *brick;
     
     int brickCount;
+    
+    float scale;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -51,6 +53,14 @@ static NSString *scoreLabelName = @"scoreLabelName";
 
         
         self.backgroundColor = [SKColor whiteColor];
+        
+        // GA
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIScreenName value:@"GameScene"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        tracker.allowIDFACollection = NO;
+        
+        scale = [self setDeviceScale];
         
         // Setup Game values
         self.gameEnding = NO;
@@ -104,7 +114,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
     SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Thin"];
     
     scoreLabel.name = scoreLabelName;
-    scoreLabel.fontSize = 40;
+    scoreLabel.fontSize = 40*scale;
     
     scoreLabel.fontColor = [SKColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1.0f];
     scoreLabel.text = [NSString stringWithFormat:@"%i", 0];
@@ -126,13 +136,13 @@ static NSString *scoreLabelName = @"scoreLabelName";
     self.instructions = [[SKNode alloc] init];
     
     SKSpriteNode *arrow_left = [SKSpriteNode spriteNodeWithImageNamed:@"arrow-left"];
-    arrow_left.position = CGPointMake(self.size.width/2 - 60, self.size.height/5);
+    arrow_left.position = CGPointMake(self.size.width/2 - 60*scale, self.size.height/5);
     
     [self.instructions addChild:arrow_left];
     
     
     SKSpriteNode *arrow_right = [SKSpriteNode spriteNodeWithImageNamed:@"arrow"];
-    arrow_right.position = CGPointMake(self.size.width/2 + 60, self.size.height/5);
+    arrow_right.position = CGPointMake(self.size.width/2 + 60*scale, self.size.height/5);
     
     [self.instructions addChild:arrow_right];
     
@@ -140,7 +150,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
     
     SKLabelNode *slideText = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue-Thin"];
     
-    slideText.fontSize = 25;
+    slideText.fontSize = 25*scale;
     
     slideText.fontColor = [SKColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1.0f];
     slideText.text = @"SLIDE";
@@ -177,13 +187,13 @@ static NSString *scoreLabelName = @"scoreLabelName";
         if (brickCount == 8)
         {
             brickCount = 0;
-            [ball.physicsBody applyImpulse:CGVectorMake(ball.physicsBody.velocity.dx*0.0005, ball.physicsBody.velocity.dy*0.0005)];
+            [ball.physicsBody applyImpulse:CGVectorMake(ball.physicsBody.velocity.dx*0.0005*pow(scale, 3), ball.physicsBody.velocity.dy*0.0005*pow(scale, 3))];
 
             [self addBrickLine:self.size];
             
             [self enumerateChildNodesWithName:brickName usingBlock:^(SKNode *node, BOOL *stop) {
                 
-                SKAction *move = [SKAction moveBy:CGVectorMake(0, -20) duration:1];
+                SKAction *move = [SKAction moveBy:CGVectorMake(0, -20*scale) duration:1];
                 [node runAction:move];
             }];
         }
@@ -208,7 +218,8 @@ static NSString *scoreLabelName = @"scoreLabelName";
         CGPoint newPosition = CGPointMake(location.x, self.size.height/10);
         
         if (self.firstTouch == 0) {
-            [self.instructions removeFromParent];
+            //[self.instructions removeFromParent];
+            self.instructions.alpha = 0;
             [self addBallImpulse];
             self.firstTouch++;
         }
@@ -236,7 +247,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
         
         
         for (int i =0; i < 8; i++) {
-            brick = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:139/255.0 green:188/255.0 blue:255/255.0 alpha:1.0] size:CGSizeMake(30, 10)];
+            brick = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:139/255.0 green:188/255.0 blue:255/255.0 alpha:1.0] size:CGSizeMake(30*scale, 10*scale)];
             brick.name = brickName;
             
             int xPos = size.width/9 * (i+1);
@@ -264,7 +275,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
         
         
         for (int i =0; i < 8; i++) {
-            brick = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:139/255.0 green:188/255.0 blue:255/255.0 alpha:1.0] size:CGSizeMake(30, 10)];
+            brick = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:139/255.0 green:188/255.0 blue:255/255.0 alpha:1.0] size:CGSizeMake(30*scale, 10*scale)];
             brick.name = brickName;
             
             int xPos = size.width/9 * (i+1);
@@ -286,7 +297,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
 - (void) addPlayer:(CGSize)size
 {
     // create paddle sprite
-    self.paddle = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:148/255.0 green:203/255.0 blue:101/255.0 alpha:1.0] size:CGSizeMake(80, 20)];
+    self.paddle = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:148/255.0 green:203/255.0 blue:101/255.0 alpha:1.0] size:CGSizeMake(80*scale, 20*scale)];
     
     self.paddle.position = CGPointMake(size.width/2, size.height/10);
     
@@ -304,7 +315,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
 - (void)addBall:(CGSize)size
 {
     // Create a new sprite
-    ball = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:154/255.0 green:96/255.0 blue:183/255.0 alpha:1.0] size:CGSizeMake(10, 10)];
+    ball = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:154/255.0 green:96/255.0 blue:183/255.0 alpha:1.0] size:CGSizeMake(10*scale, 10*scale)];
     
     
     // center position
@@ -333,7 +344,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
         dxVector = dxVector*-1;
     }
     
-    [ball.physicsBody applyImpulse:CGVectorMake(dxVector,dyVector)];
+    [ball.physicsBody applyImpulse:CGVectorMake(dxVector*pow(scale, 3), dyVector*pow(scale, 3))];
 }
 
 - (void) addBottomEdge:(CGSize)size
@@ -351,7 +362,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
 {
     __block BOOL bricksTooLow = NO;
     [self enumerateChildNodesWithName:brickName usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.y <= 100) {
+        if (node.position.y <= 100*scale) {
             bricksTooLow = YES;
             *stop = YES;
         }
@@ -382,6 +393,16 @@ static NSString *scoreLabelName = @"scoreLabelName";
         
         EndScene *end = [EndScene sceneWithSize:self.size];
         [self.view presentScene:end transition:[SKTransition doorsCloseHorizontalWithDuration:0.5]];
+    }
+}
+
+- (float)setDeviceScale
+{
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        return 2.0f; /* Device is iPad */
+    } else {
+        return 1.0f;
     }
 }
 

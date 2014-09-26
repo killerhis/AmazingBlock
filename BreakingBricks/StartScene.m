@@ -15,6 +15,12 @@
 {
     if (self = [super initWithSize:size]) {
         
+        // GA
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker set:kGAIScreenName value:@"StartMenu"];
+        [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+        tracker.allowIDFACollection = NO;
+        
         self.backgroundColor = [SKColor whiteColor];
         
         SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed:@"start_background"];
