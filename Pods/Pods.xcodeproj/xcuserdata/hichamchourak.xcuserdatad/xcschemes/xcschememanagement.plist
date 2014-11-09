@@ -4,7 +4,42 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ChartboostSDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Facebook-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GameCenterManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Google-Mobile-Ads-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GoogleAnalytics-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Reachability.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8E09B415CB4541BBA13A5422</key>
+		<key>0B73B547437948295308715B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95430AE1472D47C388590044</key>
+		<key>348D19CD3FC29FB0FCE32307</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3814C7DE1318DC71BE163CF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>615C06A738B9219C2F490687</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6F3B2FFAE3EEB6582C8D9F73</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B62D8816DF1632063C91BC02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B6C7B0351E047EC574FEC01E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEE7999794C42DF2311C680C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD2D4CCB7506773D84E1DBC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

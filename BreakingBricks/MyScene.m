@@ -8,6 +8,8 @@
 
 #import "MyScene.h"
 #import "EndScene.h"
+#import "GameCenterManager.h"
+#import "ViewController.h"
 
 #define ARC4RANDOM_MAX 0x100000000
 
@@ -21,8 +23,9 @@
 @property (nonatomic, strong) SKAction *playSFX;
 @property (nonatomic, strong) SKAction *playBrickSFX;
 
-@property (nonatomic) int score;
+@property (nonatomic) NSInteger score;
 @property (nonatomic) int firstTouch;
+@property (nonatomic) NSInteger bestScore;
 
 @end
 
@@ -136,13 +139,13 @@ static NSString *scoreLabelName = @"scoreLabelName";
     self.instructions = [[SKNode alloc] init];
     
     SKSpriteNode *arrow_left = [SKSpriteNode spriteNodeWithImageNamed:@"arrow-left"];
-    arrow_left.position = CGPointMake(self.size.width/2 - 60*scale, self.size.height/5);
+    arrow_left.position = CGPointMake(self.size.width/2 - 60*scale, self.size.height/5 + 50*scale);
     
     [self.instructions addChild:arrow_left];
     
     
     SKSpriteNode *arrow_right = [SKSpriteNode spriteNodeWithImageNamed:@"arrow"];
-    arrow_right.position = CGPointMake(self.size.width/2 + 60*scale, self.size.height/5);
+    arrow_right.position = CGPointMake(self.size.width/2 + 60*scale, self.size.height/5 + 50*scale);
     
     [self.instructions addChild:arrow_right];
     
@@ -155,7 +158,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
     slideText.fontColor = [SKColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1.0f];
     slideText.text = @"SLIDE";
     
-    slideText.position = CGPointMake(self.size.width/2, self.size.height/5 - slideText.frame.size.height/2);
+    slideText.position = CGPointMake(self.size.width/2, self.size.height/5 - slideText.frame.size.height/2  + 50*scale);
     
     [self.instructions addChild:slideText];
     
@@ -215,7 +218,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
 {
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
-        CGPoint newPosition = CGPointMake(location.x, self.size.height/10);
+        CGPoint newPosition = CGPointMake(location.x, self.size.height/10  + 50*scale);
         
         if (self.firstTouch == 0) {
             //[self.instructions removeFromParent];
@@ -299,7 +302,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
     // create paddle sprite
     self.paddle = [SKSpriteNode spriteNodeWithColor:[SKColor colorWithRed:148/255.0 green:203/255.0 blue:101/255.0 alpha:1.0] size:CGSizeMake(80*scale, 20*scale)];
     
-    self.paddle.position = CGPointMake(size.width/2, size.height/10);
+    self.paddle.position = CGPointMake(size.width/2, size.height/10 + 50*scale);
     
     self.paddle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.paddle.frame.size];
     self.paddle.physicsBody.restitution = 0.1f;
@@ -380,7 +383,7 @@ static NSString *scoreLabelName = @"scoreLabelName";
         
         // Save new Highscore
         
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         [defaults setInteger:self.score forKey:@"Score"];
         NSInteger bestScore = [defaults integerForKey:@"bestScore"];
@@ -389,7 +392,9 @@ static NSString *scoreLabelName = @"scoreLabelName";
             
             [defaults setInteger:self.score forKey:@"bestScore"];
         }
-        [defaults synchronize];
+        [defaults synchronize];*/
+        
+        [self saveScore];
         
         EndScene *end = [EndScene sceneWithSize:self.size];
         [self.view presentScene:end transition:[SKTransition doorsCloseHorizontalWithDuration:0.5]];
@@ -406,5 +411,34 @@ static NSString *scoreLabelName = @"scoreLabelName";
     }
 }
 
+- (void)saveScore
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setInteger:self.score forKey:@"Score"];
+    self.bestScore = [defaults integerForKey:@"bestScore"];
+    NSInteger gamesPlayed = [defaults integerForKey:@"gamesPlayed"];
+    
+    if (self.score > self.bestScore) {
+        self.bestScore = self.score;
+    }
+    
+    if ([[GameCenterManager sharedManager] checkGameCenterAvailability]) {
+        int highScore = [[GameCenterManager sharedManager] highScoreForLeaderboard:@"leaderboard_amazing_block"];
+        
+        if (highScore >= _bestScore) {
+            self.bestScore = highScore;
+        } else {
+            [[GameCenterManager sharedManager] saveAndReportScore:(int)self.bestScore leaderboard:@"leaderboard_amazing_block"  sortOrder:GameCenterSortOrderHighToLow];
+        }
+    }
+    gamesPlayed++;
+    
+    [defaults setInteger:gamesPlayed forKey:@"gamesPlayed"];
+    [defaults setInteger:self.bestScore forKey:@"bestScore"];
+    [defaults synchronize];
+    
+    
+}
 
 @end

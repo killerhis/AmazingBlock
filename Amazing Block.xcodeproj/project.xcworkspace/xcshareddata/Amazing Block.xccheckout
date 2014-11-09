@@ -14,7 +14,7 @@
 		<string>https://github.com/killerhis/AmazingBlock.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Amazing Block.xcodeproj/project.xcworkspace</string>
+	<string>Amazing Block.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9FE1BE2693A96FEB6F7D9731808C6B711EBBF93B</key>

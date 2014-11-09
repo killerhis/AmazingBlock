@@ -8,6 +8,12 @@
 
 #import "EndScene.h"
 #import "MyScene.h"
+#import <Chartboost/Chartboost.h>
+#import <Chartboost/CBNewsfeed.h>
+#import <CommonCrypto/CommonDigest.h>
+#import <AdSupport/AdSupport.h>
+#import "GameCenterManager.h"
+#import "ViewController.h"
 
 @implementation EndScene
 
@@ -16,6 +22,9 @@
     if (self = [super initWithSize:size]) {
         
         self.backgroundColor = [SKColor whiteColor];
+        
+        // Show interstitial at location HomeScreen. See Chartboost.h for available location options.
+        [Chartboost showInterstitial:CBLocationHomeScreen];
         
         // GA
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -40,9 +49,19 @@
         [self addChild:backgroundNode];
         
         SKSpriteNode *button = [SKSpriteNode spriteNodeWithImageNamed:@"button"];
-        button.position = CGPointMake(size.width/2, size.height/4);
+        button.position = CGPointMake(size.width/4, size.height/4);
         button.name = @"startButton";
         [self addChild:button];
+        
+        SKSpriteNode *gameCenterButton = [SKSpriteNode spriteNodeWithImageNamed:@"gamecenter"];
+        gameCenterButton.position = CGPointMake(3*size.width/4, size.height/4);
+        gameCenterButton.name = @"gameCenterButton";
+        [self addChild:gameCenterButton];
+        
+        SKSpriteNode *rateButton = [SKSpriteNode spriteNodeWithImageNamed:@"rate"];
+        rateButton.position = CGPointMake(size.width/2, size.height/4 - size.height/10);
+        rateButton.name = @"rateButton";
+        [self addChild:rateButton];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -70,6 +89,21 @@
         scoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 + scoreLabel.frame.size.height + 4*scale);
         
         [self addChild:scoreLabel];
+        
+        NSInteger gamesPlayed = [defaults integerForKey:@"gamesPlayed"];
+        
+        if (gamesPlayed == 5 || gamesPlayed == 40)
+        {
+            // Rate Button
+            SKSpriteNode *rateButton = [SKSpriteNode spriteNodeWithImageNamed:@"ratebut.png"];
+            rateButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+            rateButton.name = @"rate";
+            rateButton.zPosition = 100;
+            rateButton.alpha = 0.0f;
+            [self addChild:rateButton];
+            
+            [rateButton runAction:[SKAction fadeAlphaTo:1.0 duration:0.2]];
+        }
     }
     return self;
 }
@@ -84,6 +118,20 @@
         
         MyScene *firstScene = [MyScene sceneWithSize:self.size];
         [self.view presentScene:firstScene transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
+    } else if ([node.name isEqualToString:@"gameCenterButton"]) {
+        // show gamecenter leaderboard
+        [self showLeaderboard];
+    } else if ([node.name isEqualToString:@"rateButton"]) {
+        // rate game
+        [self rateApp];
+    } else if ([node.name isEqualToString:@"rate"]) {
+        
+        // Rate app
+        [self rateApp];
+        
+        [node runAction:[SKAction fadeAlphaTo:1.0 duration:0.2] completion:^{
+            [node removeFromParent];
+        }];
     }
 }
 
@@ -97,6 +145,25 @@
     }
 }
 
+#pragma mark - Game Center Methods
 
+- (void)showLeaderboard
+{
+    if ([[GameCenterManager sharedManager] checkGameCenterAvailability]) {
+        [[GameCenterManager sharedManager] presentLeaderboardsOnViewController:(ViewController *)self.view.window.rootViewController];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Center Unavailable" message:@"User is not signed in!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+#pragma mark - Helper Methods
+
+- (void)rateApp
+{
+    NSString *str = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=910010318&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8";
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+}
 
 @end

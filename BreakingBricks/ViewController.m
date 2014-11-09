@@ -9,12 +9,19 @@
 #import "ViewController.h"
 #import "MyScene.h"
 #import "StartScene.h"
+#import "GADBannerView.h"
+#import "GADRequest.h"
 
-@implementation ViewController
+@implementation ViewController {
+    GADBannerView *_bannerView;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Set GameCenter Manager Delegate
+    [[GameCenterManager sharedManager] setDelegate:self];
     
     // Load notification for background states
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
@@ -28,6 +35,15 @@
     [self.player play];
     
     __weak SKView * skView = (SKView *)self.view;
+    
+    // Load admob ads
+    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    _bannerView.adUnitID = @"ca-app-pub-2660521344509391/8866541401";
+    _bannerView.rootViewController = self;
+    _bannerView.center = CGPointMake(skView.bounds.size.width / 2, skView.bounds.size.height - (_bannerView.frame.size.height / 2));
+    [self.view addSubview:_bannerView];
+    [_bannerView loadRequest:[GADRequest request]];
+    
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         
         dispatch_async(dispatch_get_main_queue(), ^(void){
@@ -38,6 +54,10 @@
             
             // Present the scene.
             [skView presentScene:scene];
+            
+            // create Promo ad
+            self.promo = [[Promo alloc] init];
+            [self.promo fetchPromoAdWithController:self];
 
         });
     });
@@ -75,5 +95,11 @@
     [self.player play];
 }
 
+#pragma mark - GameCenterDelegate
+
+- (void)gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
+{
+    [self presentViewController:gameCenterLoginController animated:YES completion:nil];
+}
 
 @end
