@@ -147,7 +147,7 @@
         if (self.appID) {
             // Analytics of Push openrate
             [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
-            [self.promo showAlertForMessage:userInfo withTitle:@"Flappy Spikes" forAppStoreID:self.appID withView:self.window];
+            [self.promo showAlertForMessage:userInfo withTitle:@"Amazing Block" forAppStoreID:self.appID withView:self.window];
         }
     }
 }
